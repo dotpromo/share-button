@@ -193,7 +193,9 @@ class Share extends ShareUtils
     @popup('https://www.pinterest.com/pin/create/button', url: @config.networks.pinterest.url, media: @config.networks.pinterest.image, description: @config.networks.pinterest.description)
 
   network_email: ->
-    @popup('mailto:', subject: @config.networks.email.title, body: @config.networks.email.description)
+    email = @config.networks.email
+    window.location.href = "mailto:?subject=#{email.title}&body=#{email.description}"
+    false
 
   network_linkedin: ->
     linkedin = @config.networks.linkedin

@@ -354,10 +354,10 @@ Share = (function(superClass) {
   };
 
   Share.prototype.network_email = function() {
-    return this.popup('mailto:', {
-      subject: this.config.networks.email.title,
-      body: this.config.networks.email.description
-    });
+    var email;
+    email = this.config.networks.email;
+    window.location.href = "mailto:?subject=" + email.title + "&body=" + email.description;
+    return false;
   };
 
   Share.prototype.network_linkedin = function() {
